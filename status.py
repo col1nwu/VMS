@@ -17,7 +17,7 @@ def check_eng_speed(filename):
 
     max_speed = max(data)
     if int(max_speed) > eng_speed_limit:
-        return True
+        return False
 
 
 def change_eng_speed_limit(num):
@@ -29,5 +29,5 @@ if __name__ == "__main__":
     # inp = input("Set the engine speed limit: ")
     # change_eng_speed_limit(int(inp))
 
-    if check_eng_speed("eng_speed.txt"):
+    if check_eng_speed("eng_speed.txt") is False:
         print("Engine speed alert!")
