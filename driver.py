@@ -1,10 +1,10 @@
 import datetime
-import time
-import temp
-import pigpio
 import gps
-import read_RPM
 import os
+import pigpio
+import read_RPM
+import temp
+import time
 
 """
 Driver Code
@@ -18,6 +18,8 @@ Date (y-m-d) | Time (h-m-s) | RPM | Temperature (C) | Temperature (F) | Latitude
 
 
 def run():
+    os.system("sudo pigpiod")
+
     os.system("rm data.txt")
     RPM_GPIO = 2
     SAMPLE_TIME = 2.0
