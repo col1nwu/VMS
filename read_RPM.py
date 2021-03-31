@@ -2,8 +2,10 @@
 # 2016-01-20
 # Public Domain
 
+import datetime
 import time
 import pigpio  # http://abyz.co.uk/rpi/pigpio/python.html
+import os
 """
 RPM Getter
 PUP-2, 2021 ABE Capstone
@@ -117,17 +119,17 @@ if __name__ == "__main__":
     SAMPLE_TIME = 2.0
 
     pi = pigpio.pi()
-
     p = read_RPM.reader(pi, RPM_GPIO)
-
     start = time.time()
 
-    while (time.time() - start) < RUN_TIME:
+    while True:
         time.sleep(SAMPLE_TIME)
 
         RPM = p.RPM()
-
-        print("RPM={}".format(int(RPM + 0.5)))
+        RPM = int(RPM + 0.5)
+        
+        os.system("echo " + str(datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")) + " " + str(RPM) +
+                  " >> ./data/rpm_data.txt")
 
     p.cancel()
 
