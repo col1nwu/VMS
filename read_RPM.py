@@ -1,17 +1,13 @@
-# read_RPM.py
-# 2016-01-20
-# Public Domain
-
 import datetime
 import time
 import pigpio  # http://abyz.co.uk/rpi/pigpio/python.html
 import os
+import sys
+
 """
 RPM Getter
 PUP-2, 2021 ABE Capstone
-
 This file contains functions which get RPM reading from Hall effect sensor.
-
 This file is modified based on code in https://github.com/gingerbreadassassin/RPiFanController
 """
 
@@ -25,16 +21,13 @@ class reader:
         """
       Instantiate with the Pi and gpio of the RPM signal
       to monitor.
-
       Optionally the number of pulses for a complete revolution
       may be specified.  It defaults to 1.
-
       Optionally a weighting may be specified.  This is a number
       between 0 and 1 and indicates how much the old reading
       affects the new reading.  It defaults to 0 which means
       the old reading has no effect.  This may be used to
       smooth the data.
-
       Optionally the minimum RPM may be specified.  This is a
       number between 1 and 1000.  It defaults to 5.  An RPM
       less than the minimum RPM returns 0.0.
@@ -127,9 +120,9 @@ if __name__ == "__main__":
 
         RPM = p.RPM()
         RPM = int(RPM + 0.5)
-        
+
         os.system("echo " + str(datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")) + " " + str(RPM) +
-                  " >> ./data/rpm_data.txt")
+                  " " + sys.argv[1] + " >> ./data/rpm_data.txt")
 
     p.cancel()
 

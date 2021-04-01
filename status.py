@@ -25,6 +25,13 @@ def change_eng_speed_limit(num):
     eng_speed_limit = num
 
 
+def check_engine_speed(data):
+
+
+def check_engine_temp(data):
+
+
+
 if __name__ == "__main__":
     # inp = input("Set the engine speed limit: ")
     # change_eng_speed_limit(int(inp))

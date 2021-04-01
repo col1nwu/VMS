@@ -2,6 +2,8 @@ import os
 import glob
 import time
 import datetime
+import sys
+
 """
 Temperature Getter
 PUP-2, 2021 ABE Capstone
@@ -29,6 +31,8 @@ def read_temp_raw():
 
 def read_temp():
     lines = read_temp_raw()
+    if len(lines) == 0:
+        return 0
     while lines[0].strip()[-3:] != 'YES':
         time.sleep(0.2)
         lines = read_temp_raw()
@@ -44,5 +48,5 @@ if __name__ == "__main__":
     while True:
         temp = read_temp()
         os.system("echo " + str(datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")) + " " + str(temp) +
-                  " >> ./temp_data.txt")
+                  " " + sys.argv[1] + " >> ./data/temp_data.txt")
         time.sleep(2)
