@@ -8,6 +8,10 @@ import os
 import datetime
 import sys
 
+"""
+To set up the GPSD module, watch this video: https://www.youtube.com/watch?v=isVHkovZuSM
+"""
+
 dest_lat = 40.4214
 dest_lon = -86.9202
 
