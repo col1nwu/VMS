@@ -5,13 +5,13 @@ import datetime
 import sys
 
 """
-Temperature Getter
+Temperature Data Fetcher
 PUP-2, 2021 ABE Capstone
 
 This program receives data from temperature sensor and returns the temperature in Fahrenheit and Celsius.
 
 Credit to Scott Campbell.
-Retrieved from https://www.circuitbasics.com/raspberry-pi-ds18b20-temperature-sensor-tutorial/
+Source: https://www.circuitbasics.com/raspberry-pi-ds18b20-temperature-sensor-tutorial/
 """
 
 os.system('modprobe w1-gpio')

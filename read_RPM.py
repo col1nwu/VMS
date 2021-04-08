@@ -5,9 +5,11 @@ import os
 import sys
 
 """
-RPM Getter
+RPM Data Fetcher
 PUP-2, 2021 ABE Capstone
+
 This file contains functions which get RPM reading from Hall effect sensor.
+
 This file is modified based on code in https://github.com/gingerbreadassassin/RPiFanController
 """
 

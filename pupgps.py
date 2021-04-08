@@ -9,6 +9,11 @@ import datetime
 import sys
 
 """
+GPS Data Fetcher
+PUP-2, 2021 ABE Capstone
+
+This program receives data from GPS and GPSD modules and returns the location info, such as latitude and longitude.
+
 To set up the GPSD module, watch this video: https://www.youtube.com/watch?v=isVHkovZuSM
 """
 
