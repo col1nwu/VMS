@@ -26,7 +26,7 @@ interacts with the driver about the vehicle status and routing.
 **How to Use This Project?**
 - Download or clone the repository to your local machine.
 - Go inside the directory.
-- Type "./driver.sh" to run the project.
+- Type "./driver" to run the project.
 - To stop the project, type "Ctrl-C" and "python3 stop.py" in order to kill all processes.
 
 **Prerequisite of Your Local Machine**
