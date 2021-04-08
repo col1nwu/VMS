@@ -10,8 +10,7 @@ echo -n > ./data/temp_data.txt
 
 echo "Cache files cleaned..."
 
-echo "Please identify your vehicle ID"
-read vid
+vid=demo
 
 sudo pigpiod 2> /dev/null
 echo -n > ./data/pid.txt
@@ -31,7 +30,7 @@ echo $! >> ./data/pid.txt
 echo $!  # For testing purpose
 echo "RPM sensor started successfully"
 
-echo "You're good to go!"
+echo "All sensors started successfully! The monitoring has started..."
 
 while true; do
     sleep 10
