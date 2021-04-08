@@ -17,13 +17,13 @@ processable format for storage (currently in charge of PUP-1) and analysis.
 In the second part of this project, the team analyzes the raw data and
 interacts with the driver about the vehicle status and routing.
 
-**Data analysis features**:
+**Data Analysis**:
 - Distance calculator
 - Status checker
 - Trendline generator
 - Simple UI (potential feature)
 
-**How to Use this project?**
+**How to Use This Project?**
 - Download or clone the repository to your local machine.
 - Go inside the directory.
 - Type "./driver.sh" to run the project.
