@@ -5,6 +5,7 @@ Job Scheduler
 PUP-2, 2021 ABE Capstone
 
 This program connects to the Google Maps and retrieve route info from there.
+IMPORTANT: no space should exist in the coordinate files!
 
 This program is modified based on https://github.com/mkudija/blog/tree/master/content/downloads/code/google-maps-api
 """
