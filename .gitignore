@@ -2,6 +2,4 @@ venv/
 __pycache__/
 .DS_Store
 .idea/
-tilescache/
-pyroutelib3/
 data/
