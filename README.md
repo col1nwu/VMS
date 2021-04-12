@@ -18,7 +18,7 @@ In the second part of this project, the team analyzes the raw data and
 interacts with the driver about the vehicle status and routing.
 
 **Data Analysis**:
-- Distance calculator
+- Job scheduler
 - Status checker
 - Trendline generator
 - Simple UI (potential feature)
@@ -30,6 +30,8 @@ interacts with the driver about the vehicle status and routing.
 - To stop the project, type "Ctrl-C" and "python3 stop.py" in order to kill all processes.
 
 **Prerequisite of Your Local Machine**
+- The operating system is **Linux**
+- **Terminal** is available for typing in commands
 - Install the required Python modules: GPS
 - To acquire GPS and RPM data, users need to configure the Linux system based on the tutorials provided for each data
   acquisition tools.
