@@ -29,6 +29,8 @@ def Navidata(dest_lat, dest_lon, vid):
         if report['class'] == 'TPV':
             lat = getattr(report, 'lat', 0.0)
             lon = getattr(report, 'lon', 0.0)
+            alt = getattr(report, 'altHAE', 0.0)
+            speed = getattr(report, 'speed', 0.0)
             # Vector Calculation for computing Azimutj
             dest_vec = np.array(
                 [np.cos(dest_lat) * np.cos(dest_lon), np.cos(dest_lat) * np.sin(dest_lon), np.sin(dest_lat)])
@@ -42,8 +44,8 @@ def Navidata(dest_lat, dest_lon, vid):
                                             dest_lon - lon)) * 180 / math.pi
             # Get Azimuth from geographiclibary
             brng = Geodesic.WGS84.Inverse(lat, lon, dest_lat, dest_lon)['azi1']
-            data = str(lat) + " " + str(lon) + " " + vid
-
+            data = str(lat) + " " + str(lon) + " " + str(alt) + " " + str(speed) + " " + vid
+            
             # Print output; format: date | time | latitude | longitude
             os.system("echo " + str(
                 datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")) + " " + data + " >> ./data/gps_data.txt")
