@@ -4,6 +4,8 @@
 
 #### Agricultural and Biological Engineering Department, Purdue University
 
+---
+
 In the first part, the team creates data fetchers to integrate data collected from
 different sensors. The goal of this part is to collect data from different sources and output data in a readable and
 processable format for storage (currently in charge of PUP-1) and analysis.
