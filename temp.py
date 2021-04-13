@@ -47,6 +47,7 @@ def read_temp():
 if __name__ == "__main__":
     while True:
         temp = read_temp()
+        #print(temp)
         os.system("echo " + str(datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")) + " " + str(temp) +
                   " " + sys.argv[1] + " >> ./data/temp_data.txt")
         time.sleep(2)
