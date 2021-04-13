@@ -1,5 +1,8 @@
 #!/bin/bash
 
+exec 1>./log/log.txt
+exec 2>./log/log.txt
+
 echo "Welcome to the vehicle monitoring system of PUP vehicles"
 
 echo "Cleaning cache files..."
