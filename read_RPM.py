@@ -109,7 +109,7 @@ if __name__ == "__main__":
     import pigpio
     import read_RPM
 
-    RPM_GPIO = 4
+    RPM_GPIO = 14
     RUN_TIME = 60.0
     SAMPLE_TIME = 2.0
 
@@ -122,7 +122,7 @@ if __name__ == "__main__":
 
         RPM = p.RPM()
         RPM = int(RPM + 0.5)
-
+        #print(RPM)
         os.system("echo " + str(datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")) + " " + str(RPM) +
                   " " + sys.argv[1] + " >> ./data/rpm_data.txt")
 
