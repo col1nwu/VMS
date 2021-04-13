@@ -38,7 +38,7 @@ echo "RPM sensor started successfully"
 echo "All sensors started successfully! The monitoring has started..."
 
 while true; do
-    sleep 10
+    sleep 600
 
     scp -i ~/.ssh/bitnami ./data/gps_data.txt bitnami@35.224.122.42:/opt/bitnami/apache/htdocs/data
     scp -i ~/.ssh/bitnami ./data/rpm_data.txt bitnami@35.224.122.42:/opt/bitnami/apache/htdocs/data
