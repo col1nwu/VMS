@@ -38,6 +38,9 @@ interacts with the driver about the vehicle status and routing.
 - To acquire GPS and RPM data, users need to configure the Linux system based on the tutorials provided for each data
   acquisition tools.
 
+---
+We would also like to share the repository of PUP-1 team here: https://github.com/oscarhzf/pup
+
 If you have any questions or comments, feel free to contact us! We are more than happy to help you and improve our code
 meanwhile.
 
