@@ -1,13 +1,15 @@
 #!/bin/bash
 
-exec 3>&1 4>&2
+#exec 3>&1 4>&2
 
 echo "Start vehicle monitoring system..."
-driver &
+./driver &
 echo "Started successfully..."
 
 read -p "Press enter to shut down the system..."
+killall driver
 python3 stop.py
 
-exec 1>&3 2>&4 3>&- 4>&-
+#exec 1>&3 2>&4 3>&- 4>&-
 echo "System has been shut down..."
+exit 0

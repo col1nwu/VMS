@@ -1,5 +1,7 @@
 #!/bin/bash
 
+echo -n > ./log/log.txt
+
 exec 1>./log/log.txt
 exec 2>./log/log.txt
 
