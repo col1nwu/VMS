@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 import sys
 
 """
@@ -29,7 +31,7 @@ def get_route_info(apiKey, origin, destination):
 
 if __name__ == '__main__':
     # Get API Key for the Google Maps service
-    fname = "APIKey.txt"
+    fname = "/opt/bitnami/apache/htdocs/vms/APIKey.txt"
     file = open(fname, 'r')
     apiKey = file.read()
     file.close()
@@ -44,7 +46,7 @@ if __name__ == '__main__':
     elements = location.split(" ")
     origin = elements[2] + "," + elements[3]
 
-    file = open("dest.txt", "r")
+    file = open("/opt/bitnami/apache/htdocs/vms/dest.txt", "r")
     dests = file.readlines()
     file.close()
 
