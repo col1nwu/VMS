@@ -14,6 +14,8 @@ PUP-2, 2021 ABE Capstone
 
 This program receives data from GPS and GPSD modules and returns the location info, such as latitude and longitude.
 
+Return format: date, time, latitude, longitude, altitude, speed
+
 To set up the GPSD module, watch this video: https://www.youtube.com/watch?v=isVHkovZuSM
 """
 
@@ -27,23 +29,26 @@ def Navidata(dest_lat, dest_lon, vid):
     while True:
         report = gpsd.next()  #
         if report['class'] == 'TPV':
+            # Retrieve latitude, longitude, altitude, and speed
             lat = getattr(report, 'lat', 0.0)
             lon = getattr(report, 'lon', 0.0)
             alt = getattr(report, 'altHAE', 0.0)
             speed = getattr(report, 'speed', 0.0)
+
             # Vector Calculation for computing Azimutj
-            dest_vec = np.array(
-                [np.cos(dest_lat) * np.cos(dest_lon), np.cos(dest_lat) * np.sin(dest_lon), np.sin(dest_lat)])
-            curr_vec = np.array([np.cos(lat) * np.cos(lon), np.cos(lat) * np.sin(lon), np.sin(lat)])
-            normal = np.array([0, 0, 1])
-            normal_curr_n = np.cross(curr_vec, normal)
-            normal_curr_dest = np.cross(curr_vec, dest_vec)
-            angle = np.arccos(np.dot(norm(normal_curr_n), norm(normal_curr_dest))) * 180 / math.pi
-            manual_azimuth = math.atan2(np.sin(dest_lon - lon) * np.cos(dest_lat),
-                                        np.cos(lat) * np.sin(dest_lat) - np.sin(lat) * np.cos(dest_lat) * np.cos(
-                                            dest_lon - lon)) * 180 / math.pi
-            # Get Azimuth from geographiclibary
-            brng = Geodesic.WGS84.Inverse(lat, lon, dest_lat, dest_lon)['azi1']
+            # dest_vec = np.array(
+            #     [np.cos(dest_lat) * np.cos(dest_lon), np.cos(dest_lat) * np.sin(dest_lon), np.sin(dest_lat)])
+            # curr_vec = np.array([np.cos(lat) * np.cos(lon), np.cos(lat) * np.sin(lon), np.sin(lat)])
+            # normal = np.array([0, 0, 1])
+            # normal_curr_n = np.cross(curr_vec, normal)
+            # normal_curr_dest = np.cross(curr_vec, dest_vec)
+            # angle = np.arccos(np.dot(norm(normal_curr_n), norm(normal_curr_dest))) * 180 / math.pi
+            # manual_azimuth = math.atan2(np.sin(dest_lon - lon) * np.cos(dest_lat),
+            #                             np.cos(lat) * np.sin(dest_lat) - np.sin(lat) * np.cos(dest_lat) * np.cos(
+            #                                 dest_lon - lon)) * 180 / math.pi
+            # # Get Azimuth from geographiclibary
+            # brng = Geodesic.WGS84.Inverse(lat, lon, dest_lat, dest_lon)['azi1']
+
             data = str(lat) + " " + str(lon) + " " + str(alt) + " " + str(speed) + " " + vid
             
             # Print output; format: date | time | latitude | longitude

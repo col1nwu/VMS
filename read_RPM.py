@@ -109,7 +109,12 @@ if __name__ == "__main__":
     import pigpio
     import read_RPM
 
+    """
+    IMPORTANT: The line below specifies the pin number.
+    If the Hall effect sensor is connected to a wrong pin, it will generate wrong RPM readings.
+    """
     RPM_GPIO = 14
+
     RUN_TIME = 60.0
     SAMPLE_TIME = 2.0
 

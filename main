@@ -1,15 +1,20 @@
 #!/bin/bash
 
+# Create necessary directories
 mkdir -p data
 mkdir -p log
 
+# Start the monitoring system in background
 echo "Start vehicle monitoring system..."
 ./driver &
 echo "Started successfully..."
 
+# Wait for instruction to kill the project
 read -p "Press enter to shut down the system..."
+
+# Received the instruction and kill the project
 killall driver
 python3 stop.py
-
 echo "System has been shut down..."
+
 exit 0

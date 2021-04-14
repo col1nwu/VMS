@@ -15,7 +15,7 @@ echo -n > ./data/temp_data.txt
 
 echo "Cache files cleaned..."
 
-vid=demo
+vid=demo    # Specify the vehicle ID here. Each vehicle should have a unique ID
 
 sudo pigpiod 2> /dev/null
 echo -n > ./data/pid.txt
