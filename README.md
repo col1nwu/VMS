@@ -40,7 +40,7 @@ interacts with the driver about the vehicle status and routing.
 
 ---
 We would also like to share the repository of PUP-1 team here: https://github.com/oscarhzf/pup. Their project is about
-the webpage and data representation of this project.
+the webpage and data representation.
 
 If you have any questions or comments, feel free to contact us! We are more than happy to help you and improve our code
 meanwhile.
