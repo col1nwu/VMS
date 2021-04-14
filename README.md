@@ -21,25 +21,26 @@ interacts with the driver about the vehicle status and routing.
 
 **Data Analysis**:
 - Job scheduler
-- Status checker
+- Status checker (resided in the webpage)
 - Trendline generator
 - Simple UI (potential feature)
 
 **How to Use This Project?**
 - Download or clone the repository to your local machine.
 - Go inside the directory.
-- Type "./driver" to run the project.
-- To stop the project, type "Ctrl-C" and "python3 stop.py" in order to kill all processes.
+- Type "./main" to run the project.
+- To stop the project, press Enter as instructed on the screen.
 
 **Prerequisite of Your Local Machine**
 - The operating system is **Linux**
 - **Terminal** is available for typing in commands
 - Install the required Python modules: GPS
 - To acquire GPS and RPM data, users need to configure the Linux system based on the tutorials provided for each data
-  acquisition tools.
+  acquisition tools. Failed to do so may result in running the project unsuccessfully. 
 
 ---
-We would also like to share the repository of PUP-1 team here: https://github.com/oscarhzf/pup
+We would also like to share the repository of PUP-1 team here: https://github.com/oscarhzf/pup. Their project is about
+the webpage and data representation of this project.
 
 If you have any questions or comments, feel free to contact us! We are more than happy to help you and improve our code
 meanwhile.
