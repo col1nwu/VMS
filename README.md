@@ -20,10 +20,12 @@ In the second part of this project, the team analyzes the raw data and
 interacts with the driver about the vehicle status and routing.
 
 **Data Analysis**:
-- Job scheduler
-- Status checker (resided in the webpage)
+- Job scheduler (click [here](http://35.224.122.42/scheduler.php) for a preview)
+- Status checker
 - Trendline generator
-- Simple UI (potential feature)
+
+*The team has decided to move most of the data analysis features to the webpage which can be found in PUP-1's project.
+More details are given at the end.*
 
 **How to Use This Project?**
 - Download or clone the repository to your local machine.
@@ -32,6 +34,7 @@ interacts with the driver about the vehicle status and routing.
 - To stop the project, press Enter as instructed on the screen.
 
 **Prerequisite of Your Local Machine**
+- All sensors are connected correctly to the Raspberry Pi following the guideline
 - The operating system is **Linux**
 - **Terminal** is available for typing in commands
 - Install the required Python modules: GPS
@@ -39,7 +42,7 @@ interacts with the driver about the vehicle status and routing.
   acquisition tools. Failed to do so may result in running the project unsuccessfully. 
 
 ---
-We would also like to share the repository of PUP-1 team here: https://github.com/oscarhzf/pup. Their project is about
+We would also like to share PUP-1 team's [repository](https://github.com/oscarhzf/pup) here. Their project is about
 the webpage and data representation.
 
 If you have any questions or comments, feel free to contact us! We are more than happy to help you and improve our code
