@@ -34,12 +34,15 @@ if __name__ == '__main__':
     apiKey = file.read()
     file.close()
 
-    file = open("./data/gps_data.txt", "r")
+    file = open("/opt/bitnami/apache/htdocs/data/gps_data.txt", "r")
     start = file.readlines()
     if len(start) == 0:
         print("No location information yet...")
         sys.exit(1)
-    origin = start[len(start) - 1]
+    
+    location = start[len(start) - 1]
+    elements = location.split(" ")
+    origin = elements[2] + "," + elements[3]
 
     file = open("dest.txt", "r")
     dests = file.readlines()
