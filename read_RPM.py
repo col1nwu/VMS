@@ -133,13 +133,13 @@ if __name__ == "__main__":
         RPM = int(RPM + 0.5)
         # print(RPM)
         
-        if RPM > 200:
+        if RPM > 50:
             GPIO.output(23, GPIO.HIGH)
         else:
             GPIO.output(23, GPIO.LOW)
         
         os.system("echo " + str(datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")) + " " + str(RPM) +
-                  " " + sys.argv[1] + " >> ./data/rpm_data.txt")
+                " " + sys.argv[1] + " >> ./data/rpm_data.txt")
 
     p.cancel()
 
