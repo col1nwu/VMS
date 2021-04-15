@@ -7,7 +7,7 @@ import RPi.GPIO as GPIO
 
 GPIO.setmode(GPIO.BCM)
 GPIO.setwarnings(False)
-GPIO.setup(18, GPIO.OUT)
+GPIO.setup(23, GPIO.OUT)
 
 """
 RPM Data Fetcher
@@ -134,9 +134,9 @@ if __name__ == "__main__":
         # print(RPM)
         
         if RPM > 200:
-            GPIO.output(18, GPIO.HIGH)
+            GPIO.output(23, GPIO.HIGH)
         else:
-            GPIO.output(18, GPIO.LOW)
+            GPIO.output(23, GPIO.LOW)
         
         os.system("echo " + str(datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")) + " " + str(RPM) +
                   " " + sys.argv[1] + " >> ./data/rpm_data.txt")
