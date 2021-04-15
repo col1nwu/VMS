@@ -38,12 +38,14 @@ echo "RPM sensor started successfully"
 echo "All sensors started successfully! The monitoring has started..."
 
 while true; do
+    # Upload GPS, RPM, and temperature data in a certain time interval
     sleep 10
 
     scp -i ~/.ssh/bitnami ./data/gps_data.txt bitnami@35.224.122.42:/opt/bitnami/apache/htdocs/data
     scp -i ~/.ssh/bitnami ./data/rpm_data.txt bitnami@35.224.122.42:/opt/bitnami/apache/htdocs/data
     scp -i ~/.ssh/bitnami ./data/temp_data.txt bitnami@35.224.122.42:/opt/bitnami/apache/htdocs/data
 
+    # Clean the cache files
     echo -n > ./data/gps_data.txt
     echo -n > ./data/rpm_data.txt
     echo -n > ./data/temp_data.txt
