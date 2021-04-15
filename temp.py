@@ -62,6 +62,6 @@ if __name__ == "__main__":
         # print(temp)
 
         os.system("echo " + str(datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")) + " " + str(temp) +
-                " " + sys.argv[1] + " >> ./data/temp_data.txt")
+                  " " + sys.argv[1] + " >> ./data/temp_data.txt")
 
         time.sleep(2)

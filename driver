@@ -41,9 +41,9 @@ while true; do
     if [[ $(iwgetid) ]]; then
         echo "has wifi"
     else
-	echo "no wifi"
-	sleep 10
-	continue
+	      echo "no wifi"
+	      sleep 10
+	      continue
     fi
     
     # Upload GPS, RPM, and temperature data in a certain time interval
