@@ -1,5 +1,10 @@
 import os
+import RPi.GPIO as GPIO
 
+GPIO.setmode(GPIO.BCM)
+GPIO.setwarnings(False)
+GPIO.setup(18, GPIO.OUT)
+GPIO.setup(23, GPIO.OUT)
 
 def stop():
     file = open("./data/pid.txt", "r")
@@ -16,6 +21,9 @@ def stop():
     os.system("kill " + pid2)
     os.system("kill " + pid3)
 
+    # Shut down the LED's too
+    GPIO.output(23, GPIO.LOW)
+    GPIO.output(18, GPIO.LOW)
 
 if __name__ == "__main__":
     stop()
