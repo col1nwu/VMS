@@ -3,7 +3,11 @@ import glob
 import time
 import datetime
 import sys
+import RPi.GPIO as GPIO
 
+GPIO.setmode(GPIO.BCM)
+GPIO.setwarnings(False)
+GPIO.setup(18,GPIO.OUT)
 """
 Temperature Data Fetcher
 PUP-2, 2021 ABE Capstone
@@ -47,7 +51,12 @@ def read_temp():
 if __name__ == "__main__":
     while True:
         temp = read_temp()
-        #print(temp)
+        print(temp)
+        if temp > 26:
+            GPIO.output(18,GPIO.HIGH)
+        else:
+            GPIO.output(18,GPIO.LOW)
+        # print(temp)
         os.system("echo " + str(datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")) + " " + str(temp) +
-                  " " + sys.argv[1] + " >> ./data/temp_data.txt")
+                 " " + sys.argv[1] + " >> ./data/temp_data.txt")
         time.sleep(2)

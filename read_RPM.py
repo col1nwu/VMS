@@ -3,7 +3,11 @@ import time
 import pigpio  # http://abyz.co.uk/rpi/pigpio/python.html
 import os
 import sys
+import RPi.GPIO as GPIO
 
+GPIO.setmode(GPIO.BCM)
+GPIO.setwarnings(False)
+GPIO.setup(18,GPIO.OUT)
 """
 RPM Data Fetcher
 PUP-2, 2021 ABE Capstone
@@ -127,7 +131,13 @@ if __name__ == "__main__":
 
         RPM = p.RPM()
         RPM = int(RPM + 0.5)
-        #print(RPM)
+        # print(RPM)
+        
+        if RPM > 200:
+            GPIO.output(18,GPIO.HIGH)
+        else:
+            GPIO.output(18,GPIO.LOW)
+        
         os.system("echo " + str(datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")) + " " + str(RPM) +
                   " " + sys.argv[1] + " >> ./data/rpm_data.txt")
 
