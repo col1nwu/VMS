@@ -54,7 +54,7 @@ if __name__ == "__main__":
         temp = read_temp()
         print(temp)
 
-        if temp > 26:
+        if temp > 30:
             GPIO.output(18, GPIO.HIGH)
         else:
             GPIO.output(18, GPIO.LOW)
@@ -62,6 +62,6 @@ if __name__ == "__main__":
         # print(temp)
 
         os.system("echo " + str(datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")) + " " + str(temp) +
-                  " " + sys.argv[1] + " >> ./data/temp_data.txt")
+                " " + sys.argv[1] + " >> ./data/temp_data.txt")
 
         time.sleep(2)
