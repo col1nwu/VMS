@@ -17,6 +17,7 @@ This program receives data from GPS and GPSD modules and returns the location in
 Return format: date, time, latitude, longitude, altitude, speed
 
 To set up the GPSD module, watch this video: https://www.youtube.com/watch?v=isVHkovZuSM
+Reference of code: https://ozzmaker.com/using-python-with-a-gps-receiver-on-a-raspberry-pi/
 """
 
 
@@ -29,15 +30,20 @@ def Navidata(vid):
             # Retrieve latitude, longitude, altitude, and speed
             lat = getattr(report, 'lat', 0.0)
             lon = getattr(report, 'lon', 0.0)
-            alt = getattr(report, 'alt', 0.0)
-            speed = getattr(report, 'speed', 0.0)
+            alt = getattr(report, 'alt', 'nan')
+            speed = getattr(report, 'speed', 'nan')
 
-            data = str(lat) + " " + str(lon) + " " + str(alt) + " " + str(speed) + " " + vid
+            data = str(lat) + " " + str(lon) + " " + str(alt) + " " + str(speed)
             
+        if report['class'] == 'SKY':
+            data += " " + str(len(gpsd.satellites)) + " " + vid
+        
             # Print output; format: date | time | latitude | longitude | altitude | speed | vehicle ID
             os.system("echo " + str(
                 datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")) + " " + data + " >> ./data/gps_data.txt")
 
+            data = ""
+            
             # Set a time interval: 2 sec
             time.sleep(2)
 
