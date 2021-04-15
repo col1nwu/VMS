@@ -32,7 +32,7 @@ def Navidata(dest_lat, dest_lon, vid):
             # Retrieve latitude, longitude, altitude, and speed
             lat = getattr(report, 'lat', 0.0)
             lon = getattr(report, 'lon', 0.0)
-            alt = getattr(report, 'altHAE', 0.0)
+            alt = getattr(report, 'alt', 0.0)
             speed = getattr(report, 'speed', 0.0)
 
             # Vector Calculation for computing Azimutj
