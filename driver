@@ -38,9 +38,9 @@ while true; do
     if [[ $(iwgetid) ]]; then
         echo "Internet is available. Start transporting data..."
     else
-	      echo "Internet is not available. Continue collecting data and try uploading next time..."
-	      sleep 60
-	      continue
+        echo "Internet is not available. Continue collecting data and try uploading next time..."
+        sleep 60
+        continue
     fi
 
     # Upload data files to the cloud
