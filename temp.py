@@ -14,6 +14,7 @@ Temperature Data Fetcher
 PUP-2, 2021 ABE Capstone
 
 This program receives data from temperature sensor and returns the temperature in Fahrenheit and Celsius.
+The temperature LED on the left. It is connected to GPIO 18.
 
 Credit to Scott Campbell.
 Source: https://www.circuitbasics.com/raspberry-pi-ds18b20-temperature-sensor-tutorial/

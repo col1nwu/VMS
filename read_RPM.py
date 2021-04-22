@@ -14,6 +14,7 @@ RPM Data Fetcher
 PUP-2, 2021 ABE Capstone
 
 This file contains functions which get RPM reading from Hall effect sensor.
+The RPM LED is on the right. It is connected to GPIO 23.
 
 This file is modified based on code in https://github.com/gingerbreadassassin/RPiFanController
 """
