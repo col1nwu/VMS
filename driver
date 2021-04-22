@@ -8,7 +8,10 @@ exec 2>./log/log.txt
 
 echo "Welcome to the vehicle monitoring system of PUP vehicles"
 
-vid=demo    # Specify the vehicle ID here. Each vehicle should have a unique ID
+# Manually updated field
+# Specify the vehicle ID here. Each vehicle should have a unique ID
+# It should be initialized before running the program
+vid=demo
 
 sudo pigpiod 2> /dev/null
 echo -n > ./data/pid.txt
