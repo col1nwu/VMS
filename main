@@ -9,10 +9,10 @@ echo "Start vehicle monitoring system..."
 ./driver &
 echo "Started successfully..."
 
-# Wait for instruction to kill the project
+# Wait for instruction to kill the program
 read -p "Press enter to shut down the system..."
 
-# Received the instruction and kill the project
+# Received the instruction and kill the program
 killall driver
 python3 stop.py
 echo "System has been shut down..."
