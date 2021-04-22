@@ -9,9 +9,9 @@ echo "Welcome to the vehicle monitoring system of PUP vehicles"
 
 echo "Cleaning cache files..."
 
-echo -n > ./data/gps_data.txt
-echo -n > ./data/rpm_data.txt
-echo -n > ./data/temp_data.txt
+# echo -n > ./data/gps_data.txt
+# echo -n > ./data/rpm_data.txt
+# echo -n > ./data/temp_data.txt
 
 echo "Cache files cleaned..."
 
@@ -47,7 +47,7 @@ while true; do
     fi
     
     # Upload GPS, RPM, and temperature data in a certain time interval
-    sleep 10
+    sleep 60
 
     scp -i ~/.ssh/bitnami ./data/gps_data.txt bitnami@35.224.122.42:/opt/bitnami/apache/htdocs/data
     scp -i ~/.ssh/bitnami ./data/rpm_data.txt bitnami@35.224.122.42:/opt/bitnami/apache/htdocs/data
