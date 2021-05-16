@@ -58,4 +58,4 @@ meanwhile.
 
 Rundong Peng, peng209@purdue.edu\
 Colin Wu, wu1418@purdue.edu\
-Tianzhang Zhao, zhao770@purdue.edu\
+Tianzhang Zhao, zhao770@purdue.edu
