@@ -8,9 +8,14 @@ exec 2>./log/log.txt
 
 echo "Welcome to the vehicle monitoring system of PUP vehicles"
 
-# Manually updated field
+##########################
+#                        #
+# Change vehicle ID here #
+#                        #
+##########################
 # Specify the vehicle ID here. Each vehicle should have a unique ID
-# It should be initialized before running the program
+# It should be manually inserted before running the VMS on any vehicles
+# The current vehicle ID is "demo" which is only for testing
 vid=demo
 
 sudo pigpiod 2> /dev/null
@@ -34,9 +39,9 @@ echo "RPM sensor started successfully"
 echo "All sensors started successfully! The monitoring has started..."
 
 while true; do
-    # Check if Raspberry Pi is connected to WiFi
+    # Check if Raspberry Pi is connected to a WiFi
     if [[ $(iwgetid) ]]; then
-        echo "Internet is available. Start transporting data..."
+        echo "Internet is available. Start uploading data..."
     else
         echo "Internet is not available. Continue collecting data and try uploading next time..."
         sleep 60
@@ -54,6 +59,12 @@ while true; do
     echo -n > ./data/rpm_data.txt
     echo -n > ./data/temp_data.txt
 
-    # Upload GPS, RPM, and temperature data every 1 minute
+    ###############################
+    #                             #
+    # Change upload interval here #
+    #                             #
+    ###############################
+    # The program will upload data files in a certain time interval
+    # The current time interval is 1 min.
     sleep 60
 done
