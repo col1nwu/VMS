@@ -36,6 +36,11 @@ if __name__ == '__main__':
     apiKey = file.read()
     file.close()
 
+    ############################################
+    #                                          #
+    # Put coordinates of all farms in gps_data #
+    #                                          #
+    ############################################
     file = open("/opt/bitnami/apache/htdocs/data/gps_data.txt", "r")
     start = file.readlines()
     if len(start) == 0:
