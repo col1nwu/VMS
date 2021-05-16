@@ -45,8 +45,14 @@ def Navidata(vid):
                 datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")) + " " + data + " >> ./data/gps_data.txt")
 
             data = ""
-            
-            # Set a time interval: 2 sec
+
+            ################################
+            #                              #
+            # Change probing interval here #
+            #                              #
+            ################################
+            # The program will collect data in a certain time interval
+            # The current time interval is 2 sec.
             time.sleep(2)
 
 

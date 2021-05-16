@@ -116,11 +116,18 @@ if __name__ == "__main__":
 
     """
     IMPORTANT: The line below specifies the pin number.
-    If the Hall effect sensor is connected to a wrong pin, it will generate wrong RPM readings.
+    If the Hall effect sensor is connected to a wrong pin, it will generate random RPM readings.
     """
     RPM_GPIO = 14
 
-    RUN_TIME = 60.0
+    ################################
+    #                              #
+    # Change probing interval here #
+    #                              #
+    ################################
+    # The program will collect data in a certain time interval
+    # The current time interval is 2 sec.
+    # Change the value of SAMPLE_TIME will change the probing interval.
     SAMPLE_TIME = 2.0
 
     pi = pigpio.pi()
@@ -132,9 +139,15 @@ if __name__ == "__main__":
 
         RPM = p.RPM()
         RPM = int(RPM + 0.5)
-        # print(RPM)
 
+        #############################
+        #                           #
+        # Change RPM threshold here #
+        #                           #
+        #############################
         if RPM > 50:
+            # If the RPM is above the threshold, the LED will light up
+            # The current threshold is 50 rpm for testing
             GPIO.output(23, GPIO.HIGH)
         else:
             GPIO.output(23, GPIO.LOW)

@@ -46,7 +46,7 @@ def read_temp():
     if equals_pos != -1:
         temp_string = lines[1][equals_pos + 2:]
         temp_c = float(temp_string) / 1000.0
-        temp_f = temp_c * 9.0 / 5.0 + 32.0
+        # temp_f = temp_c * 9.0 / 5.0 + 32.0
         return temp_c
 
 
@@ -55,14 +55,27 @@ if __name__ == "__main__":
         temp = read_temp()
         print(temp)
 
+        #####################################
+        #                                   #
+        # Change temperature threshold here #
+        #                                   #
+        #####################################
         if temp > 30:
+            # If the temperature is above the threshold, the LED will light up
+            # The current threshold is 30 C for testing
             GPIO.output(18, GPIO.HIGH)
         else:
             GPIO.output(18, GPIO.LOW)
 
-        # print(temp)
-
         os.system("echo " + str(datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")) + " " + str(temp) +
                   " " + sys.argv[1] + " >> ./data/temp_data.txt")
 
+        ################################
+        #                              #
+        # Change probing interval here #
+        #                              #
+        ################################
+
+        # The program will collect data in a certain time interval
+        # The current time interval is 2 sec.
         time.sleep(2)
